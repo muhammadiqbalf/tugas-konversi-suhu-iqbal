@@ -1,0 +1,51 @@
+print("TUGAS KONVERSI SUHU DISUSUN OLEH IQBAL")
+
+suhu = input("Masukan suhu? (Misal: 100C, 212F, 373K, 80R): ")
+drjt = int(suhu[:-1])
+inputan = suhu[-1]
+
+# KONVERSI KE CELCIUS
+if inputan.upper() == "C":
+  hasilA = float((9 * drjt) / 5 + 32)
+  hasilB = float(drjt + 273.15)
+  hasilC = float(4/5 * drjt)
+  jenisX = "Celcius"
+  jenisA = "Fahrenheit"
+  jenisB = "Kelvin"
+  jenisC = "Reamur"
+
+# KONVERSI KE FAHRENHEIT
+elif inputan.upper() == "F":
+  hasilA = float((drjt - 32) * 5 / 9)
+  hasilB = float(((drjt - 32) * 5 / 9) + 273.15)
+  hasilC = float(4/9 * (drjt-32))
+  jenisX = "Fahrenheit"
+  jenisA = "Celsius"
+  jenisB = "Kelvin"
+  jenisC = "Reamur"
+
+# KONVERSI KE KELVIN
+elif inputan.upper() == "K":
+  hasilA = float(drjt - 273.15)
+  hasilB = float(((drjt - 273.15) * 9 / 5)+32)
+  hasilC = float(4/5 * (drjt-273))
+  jenisX = "Kelvin"
+  jenisA = "Celcius"
+  jenisB = "Fahrenheit"
+  jenisC = "Reamur"
+
+# KONVERSI KE REAMUR
+elif inputan.upper() == "R":
+  hasilA = float((5/4) * drjt)
+  hasilB = float((9/4 * drjt) + 32)
+  hasilC = float((5/4 * drjt) + 273)
+  jenisX = "Reamur"
+  jenisA = "Celcius"
+  jenisB = "Fahrenheit"
+  jenisC = "Kelvin"
+else:
+   print("Inputan tidak sesuai!! Perhatikan Penulisan Input")
+
+print(drjt,jenisX,"=","{:.1f}".format(hasilA),jenisA)
+print(drjt,jenisX,"=","{:.1f}".format(hasilB),jenisB)
+print(drjt,jenisX,"=","{:.1f}".format(hasilC),jenisC)
